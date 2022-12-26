@@ -1,0 +1,30 @@
+[package]
+name = "libmcqfw-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+clap = { version = "4.0.*", features = ["derive"] }
+serde = { version = "1.0.*", features = ["derive"] }
+serde_json = "1.0.*"
+
+socks5-proto = "0.3.*"
+socks5-server = { git = "https://github.com/Cl-He-O/socks5-server" }
+
+regex = "1.7.*"
+
+tokio = { version = "1.23.*", features = ["full"] }
+anyhow = "1.0.*"
+
+log = "0.4.*"
+
+async-trait = "0.1.*"
+
+[target.'cfg(target_os="android")'.dependencies]
+jni = "0.20.*"
+
+[lib]
+crate-type = ["cdylib"]
